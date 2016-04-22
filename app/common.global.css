@@ -1,0 +1,33 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body {
+  background-color: black;
+}
+
+.text{
+  color:white;
+  font-family: 'Jeju Gothic';
+  font-size:50px;
+}
+.weather_container{
+  width:100%;
+}
+
+.weather_img{
+  margin: 0 auto;
+}
+
+.state{
+  display:inline-block;
+  vertical-align: middle;
+  margin-left:20px;
+}
+
+.weather{
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.container{
+  min-width:1980px;
+}

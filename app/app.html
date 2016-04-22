@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Electron React!</title>
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+<!--    <link rel="stylesheet" href="./common.css"/>-->
+
+  </head>
+  <body>
+    
+    <div class="container">
+       <div class="row">
+          <div class="col-md-4">
+                 <div id="root" class="weather"></div>
+          </div>
+           <div class="col-md-4">
+                
+          </div>
+           <div class="col-md-4">
+                
+          </div>
+        </div>
+    </div>
+    <script>
+      (function() {
+        const script = document.createElement('script');
+        script.src = (process.env.HOT) ? 'http://localhost:3000/dist/bundle.js' : '../dist/bundle.js';
+        document.write(script.outerHTML);
+      }());
+    </script>
+  </body>
+</html>
+
+
