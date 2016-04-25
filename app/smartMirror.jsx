@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Weather from './weather';
+import Calendar from './calendar';
 
 
 require("./common.global.css");
@@ -11,7 +12,23 @@ const url ={
 };
 
 React.render(
-  <Weather url={url.weather}/>,
+     <div className="container">
+       <div clasName="row">
+          <div className="col-md-4">
+                 <div className="weather">
+                    <Weather url={url.weather}/>
+                  </div>
+          </div>
+           <div className="col-md-4">
+                
+          </div>
+           <div className="col-md-4">
+                <div className="date">
+                    <Calendar></Calendar>
+                </div>
+          </div>
+        </div>
+    </div>,
   
 document.getElementById('root')
 );

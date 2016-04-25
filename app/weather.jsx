@@ -1,5 +1,5 @@
 import React from 'react';
-import Timer from './timer';
+
 import $ from 'jquery';
 
 export default class Weather extends React.Component {
@@ -41,11 +41,11 @@ export default class Weather extends React.Component {
 
     render() {
         return <article className="weather_container">
-                <img className="weather_img" src={this.state.image} width={100} height={100}/>
-                <span className="text state"><strong>{this.state.weather_state}</strong></span>
-                <h1 className="text" >{this.state.temperature}℃ {this.state.hour}시</h1>
-                <h1 className="text" >{this.state.address}</h1>
-                    <Timer></Timer>
+                <img className="weather_img" src={this.state.image} width={150} height={150}/>
+                <span className="text state text_font">{this.state.weather_state}</span>
+                <h1 className="text text_font" >{this.state.temperature}℃ {this.state.hour}시 기준</h1>
+                <h1 className="address text_font" >{this.state.address}</h1>
+        
             </article>;
     }
     

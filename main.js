@@ -21,7 +21,9 @@ app.on('ready', function(){
   mainWindow.on('closed', function(){
     mainWindow = null;
   });
-
+  mainWindow.webContents.session.clearCache(function(){
+//some callback.
+});
 });
 
 
