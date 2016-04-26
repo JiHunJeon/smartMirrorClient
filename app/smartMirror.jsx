@@ -14,15 +14,12 @@ const url ={
 React.render(
      <div className="container">
        <div clasName="row">
-          <div className="col-md-4">
+          <div className="col-md-6">
                  <div className="weather">
                     <Weather url={url.weather}/>
                   </div>
           </div>
-           <div className="col-md-4">
-                
-          </div>
-           <div className="col-md-4">
+           <div className="col-md-6">
                 <div className="date">
                     <Calendar></Calendar>
                 </div>
