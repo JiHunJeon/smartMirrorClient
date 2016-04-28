@@ -9,25 +9,25 @@ export default class Calendar extends React.Component {
               date: null
           };
     }
-    
+
     getTime(){
         var options = {
             weekday: "long", year: "numeric", month: "short",
             day: "numeric"
         };
-        
+
        var currentTime = new Date();
-        
+
           this.setState({
               date: currentTime.toLocaleDateString("ko-kr", options),
               time: currentTime.toLocaleTimeString("en-US")
-          }); 
+          });
     }
 
     componentDidMount(){
        this.timer =  setInterval(this.getTime.bind(this), 1000);
     }
-    
+
     componentWillUnmount(){
         clearInterval(this.timer);
     }
@@ -40,6 +40,5 @@ export default class Calendar extends React.Component {
                     </div>
             </article>;
     }
-    
-}
 
+}

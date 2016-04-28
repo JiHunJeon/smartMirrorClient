@@ -14,7 +14,7 @@ export default class Weather extends React.Component {
               time: null,
           };
     }
-    
+
     loadWeatherFromServer() {
         $.ajax({
             url: this.props.url,
@@ -45,9 +45,8 @@ export default class Weather extends React.Component {
                 <span className="text state text_font">{this.state.weather_state}</span>
                 <h1 className="text text_font" >{this.state.temperature}℃ {this.state.hour}시 기준</h1>
                 <h1 className="address text_font" >{this.state.address}</h1>
-        
+
             </article>;
     }
-    
-}
 
+}
