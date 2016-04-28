@@ -15,7 +15,6 @@ export default class Youtube extends React.Component{
       url: this.props.url,
       dataType: 'json',
       success: (data) => {
-        console.log(data);
         this.setState({
           items: data['items']
         });
@@ -26,8 +25,8 @@ export default class Youtube extends React.Component{
     });
   }
 
-  componentDidMount(){
-      this.loadYoutubeFromServer();
+  componentWillMount(){
+    this.loadYoutubeFromServer();
   }
 
   render(){
