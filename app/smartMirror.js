@@ -26,12 +26,12 @@ React.render(
                     <Calendar></Calendar>
                 </div>
           </div>
+      </div>
+      <div className="row second_row">
+        <div className="col-md-12 ">
+            <Youtube url={url.youtube}></Youtube>
         </div>
-        <div className="row">
-          <div className="col-md-12">
-              <Youtube url={url.youtube}></Youtube>
-          </div>
-        </div>
+      </div>
     </div>,
 
 document.getElementById('root')

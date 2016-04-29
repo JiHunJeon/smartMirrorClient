@@ -59,3 +59,40 @@ body {
   margin-top:35px;
   text-align:right;
 }
+.youtubeLists{
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  width:850px;
+}
+.youtubeLists li{
+  float: left;
+  position: relative;
+  width: 250px;
+  margin-top:5px;
+}
+.youtubeListItem{
+
+}
+.youtubeLists li > div{
+clear:both;
+position: relative;
+display: block;
+
+}
+.item_img{
+  width:220px;
+}
+.item_img img{
+  width:220px;
+  height: auto;
+}
+.item_text{
+  width:220px;
+  margin-top:10px;
+  height: 62px;
+}
+
+.second_row{
+  margin-top:100px;
+}

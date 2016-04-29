@@ -1,22 +1,27 @@
 import React from 'react';
+import YoutubePlay from './youtubePlay'
+import YoutubeItem from './youtubeItem'
 
 
 export default class YoutubeList extends React.Component{
   constructor(props){
       super(props);
-
-  }
-
-  handleYoutubeItemList(){
-    var ItemList = this.props.data.map( s => console.log(s.length))
-  }
-
-  componentDidMount(){
-    this.handleYoutubeItemList();
   }
 
   render(){
-    return <h1>test</h1>
+
+    var boundClick = null;
+    console.log(this.props.items);
+
+    var youtubeLists =
+        this.props.items.map(item =>
+                      <YoutubeItem item={item}/>
+                   );
+    return (
+      <ul className="youtubeLists center-block">
+        {youtubeLists}
+      </ul>
+    )
   }
 
 }

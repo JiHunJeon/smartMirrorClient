@@ -1,12 +1,15 @@
 import React from 'react';
 import YoutubeList from './youtubeList'
+import YoutubePlay from './youtubePlay'
 import $ from 'jquery';
+
 
 export default class Youtube extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      items: null
+      items: null,
+      activeItem: null
     }
   }
 
@@ -27,9 +30,25 @@ export default class Youtube extends React.Component{
 
   componentWillMount(){
     this.loadYoutubeFromServer();
+    //setInterval(this.loadYoutubeFromServer.bind(this), 1000);
+  }
+
+  handlerClick(id = null){
+      this.setState({
+        activeItem: id
+      });
   }
 
   render(){
-    return <div><YoutubeList data={this.state.items}></YoutubeList></div>
+    const container = this.state.activeItem !== 'null' ?
+    <YoutubeList items={this.state.items} onClick={() => {this.handlerClick()}}/> : <YoutubePlay item={this.state.activeItem} />
+
+    return (
+      <div className="youtubeListItem">
+        <div className="center-block">
+          {container}
+        </div>
+      </div>
+    )
   }
 }
