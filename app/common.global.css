@@ -64,6 +64,7 @@ body {
   overflow: hidden;
   list-style: none;
   width:850px;
+
 }
 .youtubeLists li{
   float: left;
@@ -95,4 +96,13 @@ display: block;
 
 .second_row{
   margin-top:100px;
+}
+
+.youtubeListItem{
+  margin-top:300px;
+  width:850px;
+}
+
+.youtubePlayer{
+  width:800px;
 }

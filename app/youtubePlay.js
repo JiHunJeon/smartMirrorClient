@@ -6,19 +6,28 @@ export default class YoutubePlay extends React.Component{
     super(props);
   }
 
+  activate(){
+
+      this.props.setActiveItem("null")
+  }
+
   render(){
     const opts ={
-      height: '390',
-      widht: '640',
+      width: '800',
+      height: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
           autoplay: 1
       }
     };
     return(
-      <Youtube
-        videoId={this.props.videoId}
-        opts={opts}
-        ></Youtube>
+      <article className="youtubePlayer center-block">
+        <div className="back" onClick={::this.activate}>back to list</div>
+        <Youtube
+          videoId={this.props.videoId}
+          opts={opts}
+          ></Youtube>
+      </article>
+
     )
   }
 }
