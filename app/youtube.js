@@ -3,30 +3,23 @@ import YoutubeList from './youtubeList'
 import YoutubePlay from './youtubePlay'
 import $ from 'jquery';
 
-  const API_KEY = 'AIzaSyBPExXnsihvNXQ6Px_kmqipb3bnshlnCCE';
 
 export default class Youtube extends React.Component{
-
   constructor(props){
     super(props);
     this.state = {
       items: null,
-      activeItem: "null",
-      url: this.props.url+"?api_key="+API_KEY,
-      nextPage: null,
-      prevPage: null,
+      activeItem: null
     }
   }
 
   loadYoutubeFromServer(){
     $.ajax({
-      url: this.state.url,
+      url: this.props.url,
       dataType: 'json',
       success: (data) => {
         this.setState({
-          items: data['items'],
-          nextPage: data['nextPageToken'],
-          prevPage: data['prevPageToken']
+          items: data['items']
         });
       },
       error: (chr, status, err) => {
@@ -40,40 +33,21 @@ export default class Youtube extends React.Component{
     //setInterval(this.loadYoutubeFromServer.bind(this), 1000);
   }
 
-  setActiveItem(id) {
-    this.setState({
-      activeItem: id
-    });
-  }
-
-  parsingParams() {
-
-  }
-
-  setUrl(type){
-    var pageToken = '';
-
-    if (type == "next"){
-       pageToken = this.state.nextPage
-    }
-    else if (type == "prev"){
-          pageToken = this.state.prevPage
-    }
-
-    this.setState({
-      url: this.props.url+"?api_key="+API_KEY+"&page="+pageToken
-    });
-
-    setTimeout(this.loadYoutubeFromServer.bind(this),100);
+  handlerClick(id = null){
+      this.setState({
+        activeItem: id
+      });
   }
 
   render(){
-    const container = this.state.activeItem === "null" ?
-    <YoutubeList items={this.state.items} setUrl={::this.setUrl} setActiveItem={::this.setActiveItem} /> : <YoutubePlay videoId={this.state.activeItem} setActiveItem={::this.setActiveItem}/>
+    const container = this.state.activeItem !== 'null' ?
+    <YoutubeList items={this.state.items} onClick={() => {this.handlerClick()}}/> : <YoutubePlay item={this.state.activeItem} />
 
-  return (
-      <div className="center-block youtubeListItem">
+    return (
+      <div className="youtubeListItem">
+        <div className="center-block">
           {container}
+        </div>
       </div>
     )
   }

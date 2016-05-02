@@ -2,19 +2,13 @@ import React from 'react'
 
 export default class YoutubeItem extends React.Component{
   constructor(props){
-      super(props);
-  }
-
-  activate() {
-    var video_id = this.props.item['video_id']
-    //const {item, setActiveItem} = this.props
-    this.props.setActiveItem(video_id)
+    super(props);
   }
 
   render(){
     return(
       <li>
-        <div className="youtube_item_container" onClick={::this.activate}>
+        <div className="youtube_item_container" >
           <div className='center-block item_img'>
             <img src={this.props.item['thumbnail']['url']}></img>
           </div>
