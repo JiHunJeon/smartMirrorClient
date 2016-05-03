@@ -9,14 +9,17 @@ export default class YoutubeList extends React.Component{
   }
 
   render(){
-
-    var boundClick = null;
-    console.log(this.props.items);
+<<<<<<< HEAD
 
     var youtubeLists =
-        this.props.items.map(item =>
-                      <YoutubeItem item={item}/>
+=======
+    const youtubeLists =
+>>>>>>> origin/master
+        this.props.items.map( item =>
+
+                      <YoutubeItem item={item} setActiveItem={this.props.setActiveItem}/>
                    );
+
     return (
       <ul className="youtubeLists center-block">
         {youtubeLists}

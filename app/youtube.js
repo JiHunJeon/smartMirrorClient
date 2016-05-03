@@ -9,7 +9,11 @@ export default class Youtube extends React.Component{
     super(props);
     this.state = {
       items: null,
-      activeItem: null
+<<<<<<< HEAD
+      activeItem: 'null'
+=======
+      activeItem: "null"
+>>>>>>> origin/master
     }
   }
 
@@ -33,16 +37,28 @@ export default class Youtube extends React.Component{
     //setInterval(this.loadYoutubeFromServer.bind(this), 1000);
   }
 
-  handlerClick(id = null){
-      this.setState({
-        activeItem: id
-      });
+  setActiveItem(id) {
+
+        console.log(id)
+    this.setState({
+      activeItem: id
+    })();
+
+    console.log(this.state.activeItem)
+
   }
 
   render(){
-    const container = this.state.activeItem !== 'null' ?
-    <YoutubeList items={this.state.items} onClick={() => {this.handlerClick()}}/> : <YoutubePlay item={this.state.activeItem} />
+<<<<<<< HEAD
+    const container = this.state.activeItem === 'null' ?
+=======
 
+    // console.log(this.state.activeItem)
+    const container = this.state.activeItem === "null" ? 
+>>>>>>> origin/master
+    <YoutubeList items={this.state.items} setActiveItem={::this.setActiveItem} /> : <YoutubePlay item={this.state.activeItem} />
+
+     //console.log(container)
     return (
       <div className="youtubeListItem">
         <div className="center-block">
