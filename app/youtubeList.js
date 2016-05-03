@@ -8,22 +8,27 @@ export default class YoutubeList extends React.Component{
       super(props);
   }
 
+  setPageActivete(type){
+        this.props.setPage(type)
+  }
   render(){
-<<<<<<< HEAD
-
-    var youtubeLists =
-=======
     const youtubeLists =
->>>>>>> origin/master
-        this.props.items.map( item =>
-
-                      <YoutubeItem item={item} setActiveItem={this.props.setActiveItem}/>
+        this.props.items.map( (item,index) =>
+                      <YoutubeItem item={item} setActiveItem={this.props.setActiveItem} key={index}/>
                    );
 
+           const nextPageList = this.setPageActivete.bind(this,'next')
+           const prevPageList = this.setPageActivete.bind(this,'prev')
+
+
     return (
-      <ul className="youtubeLists center-block">
-        {youtubeLists}
-      </ul>
+      <article>
+        <div onClick={nextPageList}>next list</div>
+        <div onClick={prevPageList}>prev list</div>
+        <ul className="youtubeLists center-block">
+          {youtubeLists}
+        </ul>
+      </article>
     )
   }
 
